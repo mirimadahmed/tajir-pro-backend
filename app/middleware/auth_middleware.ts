@@ -19,7 +19,14 @@ export default class AuthMiddleware {
       guards?: (keyof Authenticators)[]
     } = {}
   ) {
-    await ctx.auth.authenticateUsing(options.guards, { loginRoute: this.redirectTo })
-    return next()
+    try {
+      await ctx.auth.authenticateUsing(options.guards)
+      return next()
+    } catch (error) {
+      return ctx.response.status(401).json({
+        success: false,
+        message: 'Unauthorized',
+      })
+    }
   }
 }

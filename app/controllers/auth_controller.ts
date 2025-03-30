@@ -3,7 +3,7 @@ import { signupValidator, loginValidator } from '#validators/auth_validator'
 import User from '#models/user'
 import { DateTime } from 'luxon'
 import { generate } from 'randomstring'
-import mail from '@adonisjs/core/services/mail'
+// import mail from '@adonisjs/mail/services/mail'
 
 export default class AuthController {
   /**
@@ -28,10 +28,12 @@ export default class AuthController {
       // Create user
       const user = await User.create({
         ...payload,
-        isVerified: false,
+        isVerified: true, // Temporarily set to true for testing
         verificationToken,
       })
 
+      // Temporarily comment out email verification
+      /*
       // Send verification email
       await mail.send((message) => {
         message
@@ -39,10 +41,11 @@ export default class AuthController {
           .subject('Verify your email')
           .htmlView('emails/verify', { user, verificationToken })
       })
+      */
 
       return response.status(201).json({
         success: true,
-        message: 'User registered successfully. Please check your email to verify your account.',
+        message: 'User registered successfully.',
         user: {
           id: user.id,
           name: user.name,

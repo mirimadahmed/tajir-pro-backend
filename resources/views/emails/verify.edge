@@ -1,0 +1,15 @@
+<h2>Welcome to Tajir.pro!</h2>
+
+<p>Hello {{ user.name }},</p>
+
+<p>Thank you for registering with Tajir.pro. To complete your registration, please verify your email address by clicking the link below:</p>
+
+<p>
+  <a href="{{ `${process.env.APP_URL}/verify-email?token=${verificationToken}` }}">
+    Verify Email Address
+  </a>
+</p>
+
+<p>If you did not create an account with Tajir.pro, no further action is required.</p>
+
+<p>Best regards,<br>The Tajir.pro Team</p> 

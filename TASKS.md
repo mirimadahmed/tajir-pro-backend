@@ -28,21 +28,21 @@
   - [x] Business relationship
 
 ## 3. Authentication APIs
-- [ ] POST /api/auth/signup
-  - [ ] Input validation
-  - [ ] Password hashing
-  - [ ] Role assignment
-  - [ ] Response formatting
-- [ ] POST /api/auth/login
-  - [ ] Credential validation
-  - [ ] Token generation
-  - [ ] Response formatting
-- [ ] POST /api/auth/logout
-  - [ ] Token invalidation
-  - [ ] Response formatting
-- [ ] GET /api/auth/me
-  - [ ] User data retrieval
-  - [ ] Response formatting
+- [x] POST /api/auth/signup
+  - [x] Input validation
+  - [x] Password hashing
+  - [x] Role assignment
+  - [x] Response formatting
+- [x] POST /api/auth/login
+  - [x] Credential validation
+  - [x] Token generation
+  - [x] Response formatting
+- [x] POST /api/auth/logout
+  - [x] Token invalidation
+  - [x] Response formatting
+- [x] GET /api/auth/me
+  - [x] User data retrieval
+  - [x] Response formatting
 
 ## 4. Business APIs
 - [ ] POST /api/businesses
